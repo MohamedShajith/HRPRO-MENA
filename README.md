@@ -1,6 +1,6 @@
-## hrpro-mena
+## HRPRO MENA
 
-Hrpro
+HRPRO MENA
 
 #### License
 

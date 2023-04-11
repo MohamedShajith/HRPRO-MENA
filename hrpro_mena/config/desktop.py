@@ -3,8 +3,8 @@ from frappe import _
 def get_data():
 	return [
 		{
-			"module_name": "hrpro-mena",
+			"module_name": "HRPRO MENA",
 			"type": "module",
-			"label": _("hrpro-mena")
+			"label": _("HRPRO MENA")
 		}
 	]

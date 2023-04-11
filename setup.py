@@ -9,7 +9,7 @@ from hrpro_mena import __version__ as version
 setup(
 	name="hrpro_mena",
 	version=version,
-	description="Hrpro",
+	description="HRPRO MENA",
 	author="TEAMPRO",
 	author_email="mohamedshajith.j@groupteampro.com",
 	packages=find_packages(),

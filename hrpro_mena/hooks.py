@@ -1,9 +1,9 @@
 from . import __version__ as app_version
 
 app_name = "hrpro_mena"
-app_title = "hrpro-mena"
+app_title = "HRPRO MENA"
 app_publisher = "TEAMPRO"
-app_description = "Hrpro"
+app_description = "HRPRO MENA"
 app_email = "mohamedshajith.j@groupteampro.com"
 app_license = "MIT"
 
