@@ -27,6 +27,7 @@ def calculate_gratuity(filters):
 	data = []
 	employees = frappe.get_all('Employee',{'status':'Active'},['name','employee_name','date_of_joining'])
 	for emp in employees:
+		frappe.errprint(emp)
 		from datetime import datetime
 		from dateutil import relativedelta
 		date_2 = datetime.now()
