@@ -1,0 +1,410 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee_name",
+ "creation": "2023-04-11 14:09:16.772432",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "final_settelemt_no_section",
+  "resignation_form",
+  "employee",
+  "employee_name",
+  "designation",
+  "department",
+  "date_of_joining",
+  "total_working_days",
+  "column_break_7",
+  "last_day_of_work",
+  "basic_salary",
+  "food_allowance",
+  "monthly_allowance",
+  "gross_pay",
+  "transportation_pay",
+  "hra",
+  "grade",
+  "pay_roll_details_section",
+  "pay_start_date",
+  "pay_end_date",
+  "no_of_days_worked",
+  "absent_days",
+  "earned_basic",
+  "earned_food_allowance",
+  "normal_over_time",
+  "amount",
+  "friday_over_time",
+  "wot_amount",
+  "holiday_over_time",
+  "hot_amount",
+  "total_ot",
+  "column_break_24",
+  "hra_pay",
+  "month_allowance",
+  "prodallowance",
+  "arrears",
+  "ot_incentive",
+  "transportation",
+  "total_salary",
+  "section_break_13",
+  "leaves_encashed",
+  "employment_duration",
+  "non_esb",
+  "total_worked",
+  "eligible_gratuity",
+  "leave_pay",
+  "section_break_20",
+  "gratuity_amount",
+  "additions",
+  "air_ticket_fare",
+  "monthly_deduction",
+  "air_ticket_deduction",
+  "loan_other_deduction",
+  "leave_gratuity_total",
+  "section_break_26",
+  "net_pay",
+  "column_break_56",
+  "remark",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "final_settelemt_no_section",
+   "fieldtype": "Section Break",
+   "label": "Final Settlement No"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining"
+  },
+  {
+   "fieldname": "total_working_days",
+   "fieldtype": "Int",
+   "label": "Total Working Days"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_day_of_work",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Last Day of Work"
+  },
+  {
+   "fetch_from": "employee.basic",
+   "fieldname": "basic_salary",
+   "fieldtype": "Currency",
+   "label": "Basic Salary"
+  },
+  {
+   "fetch_from": "employee.food_all",
+   "fieldname": "food_allowance",
+   "fieldtype": "Currency",
+   "label": "Food Allowance"
+  },
+  {
+   "fieldname": "monthly_allowance",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Monthly Allowance"
+  },
+  {
+   "fetch_from": "employee.gross_salary",
+   "fieldname": "gross_pay",
+   "fieldtype": "Currency",
+   "label": "Gross Pay"
+  },
+  {
+   "fetch_from": "employee.transportation",
+   "fieldname": "transportation_pay",
+   "fieldtype": "Currency",
+   "label": "Transportation "
+  },
+  {
+   "fetch_from": "employee.hra",
+   "fieldname": "hra",
+   "fieldtype": "Currency",
+   "label": "HRA"
+  },
+  {
+   "fetch_from": "employee.grade",
+   "fieldname": "grade",
+   "fieldtype": "Data",
+   "label": "Grade"
+  },
+  {
+   "fieldname": "pay_roll_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payroll Details"
+  },
+  {
+   "fieldname": "pay_start_date",
+   "fieldtype": "Date",
+   "label": "Pay Start Date"
+  },
+  {
+   "fieldname": "pay_end_date",
+   "fieldtype": "Date",
+   "label": "Pay End Date"
+  },
+  {
+   "fieldname": "no_of_days_worked",
+   "fieldtype": "Data",
+   "label": "No.of Days Worked"
+  },
+  {
+   "default": "0",
+   "fieldname": "absent_days",
+   "fieldtype": "Float",
+   "label": "Absent Days"
+  },
+  {
+   "fieldname": "earned_basic",
+   "fieldtype": "Currency",
+   "label": "Earned Basic"
+  },
+  {
+   "fieldname": "earned_food_allowance",
+   "fieldtype": "Currency",
+   "label": "Earned Food Allowance"
+  },
+  {
+   "fieldname": "normal_over_time",
+   "fieldtype": "Float",
+   "label": "Normal Over Time"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "OT Amount"
+  },
+  {
+   "fieldname": "friday_over_time",
+   "fieldtype": "Float",
+   "label": "Friday Over Time"
+  },
+  {
+   "fieldname": "wot_amount",
+   "fieldtype": "Currency",
+   "label": "WOT Amount"
+  },
+  {
+   "fieldname": "holiday_over_time",
+   "fieldtype": "Float",
+   "label": "Holiday Over Time"
+  },
+  {
+   "fieldname": "hot_amount",
+   "fieldtype": "Currency",
+   "label": "HOT Amount"
+  },
+  {
+   "fieldname": "total_ot",
+   "fieldtype": "Currency",
+   "label": "Total OT"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hra_pay",
+   "fieldtype": "Currency",
+   "label": "HRA"
+  },
+  {
+   "fieldname": "month_allowance",
+   "fieldtype": "Currency",
+   "label": "Month Allowance"
+  },
+  {
+   "fieldname": "prodallowance",
+   "fieldtype": "Currency",
+   "label": "Prod.Allowance"
+  },
+  {
+   "fieldname": "arrears",
+   "fieldtype": "Currency",
+   "label": "Arrears"
+  },
+  {
+   "fieldname": "ot_incentive",
+   "fieldtype": "Currency",
+   "label": "OT Incentive"
+  },
+  {
+   "fieldname": "transportation",
+   "fieldtype": "Currency",
+   "label": "Transportation"
+  },
+  {
+   "fieldname": "total_salary",
+   "fieldtype": "Currency",
+   "label": "Total Salary"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "leaves_encashed",
+   "fieldtype": "Data",
+   "label": "Leaves Encashed"
+  },
+  {
+   "fieldname": "employment_duration",
+   "fieldtype": "Data",
+   "label": "Employment Duration"
+  },
+  {
+   "fieldname": "non_esb",
+   "fieldtype": "Data",
+   "label": "Non ESB"
+  },
+  {
+   "fieldname": "total_worked",
+   "fieldtype": "Data",
+   "label": "Total Worked "
+  },
+  {
+   "fieldname": "eligible_gratuity",
+   "fieldtype": "Data",
+   "label": "Eligible Gratuity"
+  },
+  {
+   "fieldname": "leave_pay",
+   "fieldtype": "Currency",
+   "label": "Leave Pay"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gratuity_amount",
+   "fieldtype": "Currency",
+   "label": "Gratuity Amount"
+  },
+  {
+   "fieldname": "additions",
+   "fieldtype": "Currency",
+   "label": "Additions"
+  },
+  {
+   "fieldname": "air_ticket_fare",
+   "fieldtype": "Currency",
+   "label": "Air Ticket Fare"
+  },
+  {
+   "fieldname": "monthly_deduction",
+   "fieldtype": "Currency",
+   "label": "Monthly Deduction"
+  },
+  {
+   "fieldname": "air_ticket_deduction",
+   "fieldtype": "Currency",
+   "label": "Air Ticket Deduction"
+  },
+  {
+   "fieldname": "loan_other_deduction",
+   "fieldtype": "Currency",
+   "label": "Loan/Other Deduction"
+  },
+  {
+   "fieldname": "leave_gratuity_total",
+   "fieldtype": "Currency",
+   "label": "Leave Pay/Gratuity Total"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "net_pay",
+   "fieldtype": "Currency",
+   "label": "Net Pay"
+  },
+  {
+   "fieldname": "column_break_56",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Full and Final Settlement",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "resignation_form",
+   "fieldtype": "Link",
+   "label": "Resignation Form",
+   "options": "Resignation Form"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-11 15:00:44.066381",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Full and Final Settlement",
+ "name_case": "Title Case",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,471 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee",
+ "creation": "2023-04-11 10:44:39.324438",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_details_section",
+  "employee",
+  "employee_name",
+  "date_of_joining",
+  "grade",
+  "column_break_4",
+  "passport_number",
+  "department",
+  "designation",
+  "no_of_days_worked_section",
+  "from_date",
+  "to_date",
+  "no_of_days_worked",
+  "total_working_days",
+  "absent_days",
+  "ot_hours",
+  "wot_hours",
+  "hot_hours",
+  "overall_ot_amount",
+  "ot_incentive",
+  "column_break_12",
+  "basic",
+  "food",
+  "other_allowance",
+  "hra_salary",
+  "mobile_allowance",
+  "transport_allowance",
+  "ot_amount",
+  "wot_amount",
+  "hot_amount",
+  "prodallowance",
+  "column_break_20",
+  "salary_amount_pay",
+  "food_allowance",
+  "earned_other_allowance",
+  "earned_hra",
+  "earned_mobile_allowance",
+  "earned_transport_allowance",
+  "month_allowance",
+  "arrears",
+  "monthly_deduction",
+  "total_amount",
+  "leave_salary_section",
+  "leave_start_date",
+  "leave_end_date",
+  "lop_days",
+  "accrued_leaves",
+  "leaves_availed",
+  "leave_balance",
+  "leaves_encashed",
+  "column_break_48",
+  "no_of_days",
+  "addition",
+  "deduction",
+  "air_fair",
+  "transport_expense",
+  "total_salary",
+  "total_released_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Data",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.grade",
+   "fieldname": "grade",
+   "fieldtype": "Link",
+   "label": "Grade",
+   "options": "Employee Grade",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.passport_number",
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department ",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "no_of_days_worked_section",
+   "fieldtype": "Section Break",
+   "label": "Earned Salary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To date"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_days_worked",
+   "fieldtype": "Int",
+   "label": "No of days Worked"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_working_days",
+   "fieldtype": "Int",
+   "label": "Total Working Days"
+  },
+  {
+   "fieldname": "absent_days",
+   "fieldtype": "Float",
+   "label": "Absent Days"
+  },
+  {
+   "default": "0",
+   "fieldname": "ot_hours",
+   "fieldtype": "Int",
+   "label": "OT Hours"
+  },
+  {
+   "default": "0",
+   "fieldname": "wot_hours",
+   "fieldtype": "Int",
+   "label": "WOT Hours"
+  },
+  {
+   "default": "0",
+   "fieldname": "hot_hours",
+   "fieldtype": "Int",
+   "label": "HOT Hours"
+  },
+  {
+   "default": "0",
+   "fieldname": "overall_ot_amount",
+   "fieldtype": "Currency",
+   "label": "Overall OT Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ot_incentive",
+   "fieldtype": "Currency",
+   "label": "OT Incentive"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.basic",
+   "fieldname": "basic",
+   "fieldtype": "Currency",
+   "label": "Basic",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.food_all",
+   "fieldname": "food",
+   "fieldtype": "Currency",
+   "label": "Food Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "employee.other_allowance",
+   "fieldname": "other_allowance",
+   "fieldtype": "Currency",
+   "label": "Other Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.grade != \"Labour\"",
+   "fetch_from": "employee.hra",
+   "fieldname": "hra_salary",
+   "fieldtype": "Currency",
+   "label": "HRA",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.grade != \"Labour\"",
+   "fetch_from": "employee.mobile_allowance",
+   "fieldname": "mobile_allowance",
+   "fieldtype": "Currency",
+   "label": "Mobile Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.grade!=\"Factory Staff\"",
+   "fetch_from": "employee.transportation",
+   "fieldname": "transport_allowance",
+   "fieldtype": "Currency",
+   "label": "Transport Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ot_amount",
+   "fieldtype": "Currency",
+   "label": "OT Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "wot_amount",
+   "fieldtype": "Currency",
+   "label": "WOT Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "hot_amount",
+   "fieldtype": "Currency",
+   "label": "HOT Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "prodallowance",
+   "fieldtype": "Currency",
+   "label": "Prod.Allowance"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "salary_amount_pay",
+   "fieldtype": "Currency",
+   "label": "Earned Basic",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "food_allowance",
+   "fieldtype": "Currency",
+   "label": "Earned Food Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "earned_other_allowance",
+   "fieldtype": "Currency",
+   "label": "Earned Other Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.grade != \"Labour\"",
+   "fieldname": "earned_hra",
+   "fieldtype": "Currency",
+   "label": "Earned HRA",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.grade != \"Labour\"",
+   "fieldname": "earned_mobile_allowance",
+   "fieldtype": "Currency",
+   "label": "Earned Mobile Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.grade != \"Factory Staff\"",
+   "fieldname": "earned_transport_allowance",
+   "fieldtype": "Currency",
+   "label": "Earned Transport Allowance",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "month_allowance",
+   "fieldtype": "Currency",
+   "label": "Month Allowance"
+  },
+  {
+   "default": "0",
+   "fieldname": "arrears",
+   "fieldtype": "Currency",
+   "label": "Arrears"
+  },
+  {
+   "default": "0",
+   "fieldname": "monthly_deduction",
+   "fieldtype": "Currency",
+   "label": "Monthly Deduction"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Earned Salary"
+  },
+  {
+   "fieldname": "leave_salary_section",
+   "fieldtype": "Section Break",
+   "label": "Leave Salary"
+  },
+  {
+   "fieldname": "leave_start_date",
+   "fieldtype": "Date",
+   "label": "Leave Start Date"
+  },
+  {
+   "fieldname": "leave_end_date",
+   "fieldtype": "Date",
+   "label": "Leave End Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "lop_days",
+   "fieldtype": "Float",
+   "label": "LOP Days",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "accrued_leaves",
+   "fieldtype": "Float",
+   "label": "Accrued Leaves",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "leaves_availed",
+   "fieldtype": "Float",
+   "label": "Leaves Availed",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "leave_balance",
+   "fieldtype": "Float",
+   "label": "Leave Balance"
+  },
+  {
+   "default": "0",
+   "fieldname": "leaves_encashed",
+   "fieldtype": "Float",
+   "label": "Leaves Encashed"
+  },
+  {
+   "fieldname": "column_break_48",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_days",
+   "fieldtype": "Data",
+   "label": "No of Days"
+  },
+  {
+   "default": "0",
+   "fieldname": "addition",
+   "fieldtype": "Currency",
+   "label": "Addition"
+  },
+  {
+   "default": "0",
+   "fieldname": "deduction",
+   "fieldtype": "Currency",
+   "label": "Deduction"
+  },
+  {
+   "default": "0",
+   "fieldname": "air_fair",
+   "fieldtype": "Currency",
+   "label": "Air Fair Allowance"
+  },
+  {
+   "default": "0",
+   "fieldname": "transport_expense",
+   "fieldtype": "Currency",
+   "label": "Transport Expense"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_salary",
+   "fieldtype": "Currency",
+   "label": "Total Leave Salary"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_released_amount",
+   "fieldtype": "Currency",
+   "label": "Total Released Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-11 10:44:39.324438",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Leave Salary",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

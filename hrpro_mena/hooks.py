@@ -199,3 +199,5 @@ app_license = "MIT"
 # auth_hooks = [
 #	"hrpro_mena.auth.validate"
 # ]
+
+fixtures = ['Custom Field','Client Script','Workspace','User Permission','Print Format']
