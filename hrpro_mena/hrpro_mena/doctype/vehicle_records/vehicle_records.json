@@ -54,7 +54,7 @@
    "fieldname": "assets",
    "fieldtype": "Select",
    "label": "Asset",
-   "options": "\nElectra\nPersonal"
+   "options": "\nCompany\nPersonal"
   },
   {
    "fetch_from": "vehicle.make",
@@ -269,7 +269,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 08:03:57.316432",
+ "modified": "2023-04-17 11:26:29.506737",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Vehicle Records",

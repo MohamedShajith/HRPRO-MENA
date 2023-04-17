@@ -137,7 +137,6 @@
    "label": "Required details - Possession"
   },
   {
-   "fetch_from": "plate.vehicle_number",
    "fieldname": "plate",
    "fieldtype": "Link",
    "ignore_user_permissions": 1,
@@ -146,6 +145,7 @@
    "options": "Vehicle"
   },
   {
+   "fetch_from": "plate.last_odometer",
    "fieldname": "reading",
    "fieldtype": "Float",
    "label": "Odometer Reading"
@@ -189,6 +189,7 @@
    "options": "Vehicle"
   },
   {
+   "fetch_from": "plate.last_odometer",
    "fieldname": "odometer_reading2",
    "fieldtype": "Float",
    "label": "Odometer Reading"
@@ -280,7 +281,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-17 08:12:12.251625",
+ "modified": "2023-04-17 11:35:13.701277",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Vehicle Possession and Surrender Form",

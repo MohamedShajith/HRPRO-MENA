@@ -1,0 +1,259 @@
+{
+ "actions": [],
+ "autoname": "field:emp_name",
+ "creation": "2023-04-15 13:40:16.526531",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_2",
+  "status",
+  "employee_details_section",
+  "emp_id",
+  "emp_name",
+  "job_title",
+  "dept",
+  "column_break_5",
+  "resident_id_number",
+  "date_of_join",
+  "company",
+  "letter_head",
+  "section_break_9",
+  "date",
+  "witness_name",
+  "wn",
+  "date_and",
+  "location",
+  "column_break_12",
+  "grievences",
+  "witness_account_if_any",
+  "section_break_15",
+  "column_break_15",
+  "hr_use_only_section",
+  "data_19",
+  "column_break_24",
+  "div__dept_head",
+  "column_break_26",
+  "hr",
+  "section_break_28",
+  "hr_manager",
+  "column_break_30",
+  "managing_director"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Requested",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nRequested\nInitiated\nCompleted\nHold"
+  },
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fetch_from": "emp_id.employee_number",
+   "fieldname": "emp_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "emp_id.employee_name",
+   "fieldname": "emp_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "emp_id.designation",
+   "fieldname": "job_title",
+   "fieldtype": "Read Only",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "emp_id.department",
+   "fieldname": "dept",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "emp_id.resident_id_number",
+   "fetch_if_empty": 1,
+   "fieldname": "resident_id_number",
+   "fieldtype": "Read Only",
+   "label": "Resident ID Number(QID)"
+  },
+  {
+   "fetch_from": "emp_id.scheduled_confirmation_date",
+   "fieldname": "date_of_join",
+   "fieldtype": "Read Only",
+   "label": "Date of Joining"
+  },
+  {
+   "fetch_from": "emp_id.company",
+   "fieldname": "company",
+   "fieldtype": "Read Only",
+   "label": "Company / Division"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Request Details"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "witness_name",
+   "fieldtype": "Link",
+   "label": "Witness ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "witness_name.employee_name",
+   "fieldname": "wn",
+   "fieldtype": "Data",
+   "label": "Witness Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_and",
+   "fieldtype": "Datetime",
+   "label": "Date & Time of Incident"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grievences",
+   "fieldtype": "Small Text",
+   "label": "Grievences"
+  },
+  {
+   "fieldname": "witness_account_if_any",
+   "fieldtype": "Small Text",
+   "label": "Witness Account (If Any)"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hr_use_only_section",
+   "fieldtype": "Section Break",
+   "label": "For Office Use "
+  },
+  {
+   "description": "Comments",
+   "fieldname": "data_19",
+   "fieldtype": "Small Text",
+   "label": "Actions Recommended"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "div__dept_head",
+   "fieldtype": "Small Text",
+   "label": "Div. / Dept. Head"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "hr",
+   "fieldtype": "Small Text",
+   "label": "HR & Admin Assistant"
+  },
+  {
+   "fieldname": "section_break_28",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "hr_manager",
+   "fieldtype": "Small Text",
+   "label": "HR & Admin Manager"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "managing_director",
+   "fieldtype": "Small Text",
+   "label": "Managing Director"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-17 10:06:17.466832",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Grievance",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
