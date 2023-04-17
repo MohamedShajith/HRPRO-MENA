@@ -51,7 +51,6 @@
    "label": "Employee Details"
   },
   {
-   "fetch_from": "employee_number.employee_id",
    "fieldname": "employee_id",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -259,7 +258,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-15 14:24:05.553220",
+ "modified": "2023-04-17 15:16:57.114613",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Accident Declaration Form",

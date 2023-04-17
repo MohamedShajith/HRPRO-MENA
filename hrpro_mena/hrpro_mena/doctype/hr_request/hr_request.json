@@ -1,7 +1,7 @@
 {
  "actions": [],
  "autoname": "HR-REQ.####",
- "creation": "2023-04-17 07:55:06.322070",
+ "creation": "2023-04-17 14:51:04.667108",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -60,7 +60,6 @@
    "label": "Employee Details"
   },
   {
-   "fetch_from": "emp_id.employee_number",
    "fieldname": "emp_id",
    "fieldtype": "Link",
    "label": "Employee ID",
@@ -111,7 +110,7 @@
    "label": "Resident ID Number(QID)"
   },
   {
-   "fetch_from": "emp_id.scheduled_confirmation_date",
+   "fetch_from": "emp_id.date_of_joining",
    "fieldname": "date_of_join",
    "fieldtype": "Read Only",
    "label": "Date of Joining"
@@ -178,7 +177,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 07:55:22.430244",
+ "modified": "2023-04-17 15:01:50.097841",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "HR Request",

@@ -29,6 +29,7 @@
   "custodian_information_section",
   "custodian",
   "custodian_name",
+  "file_path",
   "column_break_21",
   "custodian_resident_qid_number",
   "email",
@@ -75,7 +76,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Sponsor Company",
-   "options": "Company"
+   "options": "Sponsor Company"
   },
   {
    "fieldname": "company",
@@ -180,11 +181,16 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "file_path",
+   "fieldtype": "Data",
+   "label": "File Path"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 08:01:11.103914",
+ "modified": "2023-04-17 13:38:57.081390",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Legal Compliance Monitor",

@@ -104,7 +104,6 @@
    "fieldname": "emp_no",
    "fieldtype": "Link",
    "label": "Employee ID",
-   "length": 10,
    "options": "Employee"
   },
   {
@@ -296,7 +295,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-15 17:10:11.929713",
+ "modified": "2023-04-17 16:46:15.320556",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Staff Disciplinary Action Form",

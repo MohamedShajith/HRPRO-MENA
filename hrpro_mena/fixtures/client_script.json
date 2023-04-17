@@ -97,5 +97,71 @@
   "name": "Leave Salary Request",
   "script": "frappe.ui.form.on('Leave Salary Request', {\n\tleave_end_date:function(frm){\n        if(frm.doc.leave_start_date && frm.doc.leave_end_date){      \n            var start = frappe.datetime.obj_to_str(frm.doc.leave_start_date);\n            var end = frappe.datetime.obj_to_str(frm.doc.leave_end_date);\n            var difference = frappe.datetime.get_day_diff(end,start);\n            if(difference >=0){\n                frm.set_value(\"leave_days\",difference + 1);\n            }\n            else{\n                frm.set_value(\"leave_days\",0);\n            }\n        }\n    },\n    leave_start_date(frm){\n        frm.trigger(\"leave_end_date\")\n    }\n})",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Vehicle Possession and Surrender Form",
+  "enabled": 1,
+  "modified": "2023-04-17 12:02:53.445148",
+  "module": "HRPRO MENA",
+  "name": "Vehicle Possession and Surrender Form",
+  "script": "frappe.ui.form.on('Vehicle Possession and Surrender Form', {\n\tvalidate(frm){\n\t    frm.trigger(\"future_date_validate\");\n\t},\n\tpossession_date(frm){\n\t    frm.trigger(\"future_date_validate\");\n\t},\n\tsurrender_date(frm){\n\t    frm.trigger(\"future_date_validate\");\n\t},\n\tfuture_date_validate:function(frm){\n\t\tvar today = new Date();\n\t\tconsole.log(today);\n\t\ttoday.setDate(today.getDate());\n\t\tvar dd = today.getDate();\n        var mm = today.getMonth() + 1; \n        var yyyy = today.getFullYear();\n        if(dd<10) \n            {\n                dd='0'+dd;\n            } \n            \n        if(mm<10) \n            {\n                mm='0'+mm;\n            } \n        today = yyyy+'-'+mm+'-'+dd;\n\t\tconsole.log(frm.doc.possession_date);\n\t\tif (frm.doc.possession_date > today){\n\t\t    frappe.msgprint(\"Future Date not Allowed in Date of Possession\");\n\t\t    frappe.validated = false;\n\t\t}\n\t\tif (frm.doc.surrender_date > today){\n\t\t    frappe.msgprint(\"Future Date not Allowed in Date of Surrender\");\n\t\t    frappe.validated = false;\n\t\t}\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Vehicle Accident Report",
+  "enabled": 1,
+  "modified": "2023-04-17 12:12:29.746183",
+  "module": "HRPRO MENA",
+  "name": "Vehicle Accident Report",
+  "script": "frappe.ui.form.on('Vehicle Accident Report', {\n\tto(frm){\n\t    if(frm.doc.to > frappe.datetime.now_date()){\n\t        frappe.msgprint(__(\"Future date is not allowed.\"));\n\t\t\tfrappe.validated = false;\n\t    }\n\t},\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Legal Compliance Monitor",
+  "enabled": 1,
+  "modified": "2023-04-17 13:16:25.887450",
+  "module": "HRPRO MENA",
+  "name": "Legal Compliance Monitor",
+  "script": "frappe.ui.form.on('Legal Compliance Monitor', {\n\tvalidate(frm){\n\t\tfrm.trigger(\"days_left\")\n\t\tfrm.trigger(\"last_renewal_date\")\n\t\tvar no = String(frm.doc.contact_number)\n\t\tconsole.log(no.length);\n\t\tif (no.length < 10) {\n\t\t\tfrappe.msgprint(__(\"Contact Number should not be 'less' or 'more' than 10 Digit\"));\n\t\t\tfrappe.validated = false;\n\t\t}\n\t},\n\tnext_due(frm) {\n\t\tfrm.trigger(\"days_left\")\n\t},\n\trenewal_frequency(frm){\n\t\tfrm.trigger(\"last_renewal_date\")\n\t},\n\n\tlast_renewal_date(frm){\n\t\tif(frm.doc.frequency_of_renewal_days > 0){\n\t\t\tvar next_due_date = frappe.datetime.add_days(frm.doc.last_renewal_date, frm.doc.frequency_of_renewal_days);\n\t\t\tfrm.set_value(\"next_due_date\", next_due_date);\n\t\t\tvar diff = frappe.datetime.get_diff(next_due_date, frappe.datetime.nowdate())\n\t\t\tfrm.set_value(\"days_left\", diff);\n\t\t}\n\t},\n\t\t\n\tpossibility_status(frm) {\n\t\tif (frm.doc.possibility_status == \"Unlimited Validity\") {\n\t\t\tfrm.set_value(\"status\", \"Unlimited\");\n\t\t}\n\t\tif (frm.doc.possibility_status == \"Not Renewable\") {\n\t\t\tfrm.set_value(\"status\", \"Not Renewable\")\n\t\t}\n\n\t\tif (frm.doc.possibility_status == \"Renewable\") {\n\t\t\tfrm.set_value(\"status\", \"Valid\")\n\t\t}\n\t},\n\tdays_left(frm) {\n\t\t\n\t\tif (frm.doc.days_left <= 30) {\n\t\t\tconsole.log(frm.doc.days_left)\n\t\t\tfrm.set_value(\"status\", \"Due for Renewal\")\n\t\t}\n\t\telse{\n\t\t\tfrm.set_value(\"status\", \"Valid\")\n\t\t}\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "HR Request",
+  "enabled": 1,
+  "modified": "2023-04-17 15:02:24.929640",
+  "module": null,
+  "name": "HR Request",
+  "script": "frappe.ui.form.on('HR Request', {\n\tonload(frm){\n\t    if(!frm.doc.table_34){\n    \t    frappe.call({\n    \t        method:'frappe.client.get_list',\n    \t        args:{\n    \t            'doctype':'Request Type'\n    \t        },\n    \t        callback(r){\n    \t            $.each(r.message,function(i,v){\n    \t                frm.add_child('table_34',{\n    \t                    'request_type':v.name\n    \t                })\n    \t                frm.refresh_field('table_34')\n    \t            })\n    \t        }\n    \t    })\n\t    }\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Staff Probation Evaluation Form",
+  "enabled": 1,
+  "modified": "2023-04-17 16:40:30.863047",
+  "module": "HRPRO MENA",
+  "name": "Staff Probation Evaluation Form",
+  "script": "frappe.ui.form.on('Staff Probation Evaluation Form', {\n    emp_id(frm){\n        frappe.call({\n\t        method: 'hrpro_mena.custom.prob_eval',\n\t        args:{\n\t            'employee_name':frm.doc.employee_name\n\t        },\n\t        callback(d){\n\t            if(d){\n\t                if(d.message == true){\n                        frappe.msgprint(\"Already a probation evaluation exist\")\n\t                }\n\t            }\n\t       }\n\t    })\n    },\n    validate:function(frm){\n        console.log('hi')\n        var total = 0 \n        $.each(frm.doc.child,function(i,d){\n            if(d.rating){\n            total += d.rating\n            }\n        })\n        console.log(total)\n        frm.set_value('total_score',total)\n    },\n    \n\t\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Staff Permission Tardy Absent Form",
+  "enabled": 1,
+  "modified": "2023-04-17 16:53:17.497840",
+  "module": "HRPRO MENA",
+  "name": "Staff Permission Tardy Absent Form",
+  "script": "frappe.ui.form.on('Staff Permission Tardy Absent Form', {\n\tto_date(frm){\n\t      frm.trigger(\"date_validate\")\n\t      frm.trigger(\"datediffer\")\n\t      \n\t  },\n\t  \n\t  from_date(frm){\n\t      frm.trigger(\"date_validation\")\n\t      frm.trigger(\"datediffer\")\n\t      \n\t  },\n\t \n\t   date_validate:function(frm){\n\t    if(frm.doc.to_date < frm.doc.from_date){\n\t        frappe.msgprint(__(\"To date cannot be less than From Date\"));\n\t\t\tfrappe.validated = false;\n\t    }\n\t},\n\t\n\t\n\tdate_validation:function(frm){\n\t    if(frm.doc.to_date < frm.doc.from_date){\n\t        frappe.msgprint(__(\"From date cannot be greater than To Date\"));\n\t\t\tfrappe.validated = false;\n\t    }\n\t},\n\n     datediffer:function(frm){\n\t     if(frm.doc.from_date && frm.doc.to_date){\n\t         var to = frappe.datetime.obj_to_str(frm.doc.to_date);\n\t         var from = frappe.datetime.obj_to_str(frm.doc.from_date);\n\t         var datediff = frappe.datetime.get_day_diff(to,from);\n\t         frm.set_value(\"days\",datediff+1);\n\t     }\n\t    }\n\t    \n});",
+  "view": "Form"
  }
 ]

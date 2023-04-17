@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestEmployeeDrivingLicenseDeclaration(FrappeTestCase):
+class TestSponsorCompany(FrappeTestCase):
 	pass

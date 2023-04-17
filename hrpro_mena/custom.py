@@ -27,3 +27,12 @@ def get_leave_application(employee):
             abs1 = frappe.db.sql("""select count(*) as count from `tabAttendance` where docstatus != 2 and employee = '%s' and  attendance_date between '%s' and '%s' and status = 'Absent' """ % (employee, first_of_month, before_day), as_dict=1)[0]
             abs2 = frappe.db.sql("""select count(*) as count from `tabAttendance` where docstatus != 2 and employee = '%s' and  attendance_date between '%s' and '%s' and status = 'On Leave' and leave_type = 'Leave Without Pay' """ % (employee, first_of_month, before_day), as_dict=1)[0]
             return first_of_month, before_day,lap.from_date, lap.custom_to_date,attendance.count, attendance.ot or 0, attendance.wot or 0, attendance.hot or 0, lap.lop_days, lap.total_leave_days, lap.leave_balance, lap.leave_type, abs1.count, abs2.count
+
+
+@frappe.whitelist()
+def prob_eval(employee_name):
+	prob = frappe.db.exists("Staff Probation Evaluation Form",employee_name)
+	if prob:
+		return True
+	else:
+		return False

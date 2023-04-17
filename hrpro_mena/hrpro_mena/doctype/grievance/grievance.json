@@ -59,7 +59,6 @@
    "label": "Employee Details"
   },
   {
-   "fetch_from": "emp_id.employee_number",
    "fieldname": "emp_id",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -101,7 +100,7 @@
    "label": "Resident ID Number(QID)"
   },
   {
-   "fetch_from": "emp_id.scheduled_confirmation_date",
+   "fetch_from": "emp_id.date_of_joining",
    "fieldname": "date_of_join",
    "fieldtype": "Read Only",
    "label": "Date of Joining"
@@ -232,7 +231,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 10:06:17.466832",
+ "modified": "2023-04-17 15:14:20.286885",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Grievance",

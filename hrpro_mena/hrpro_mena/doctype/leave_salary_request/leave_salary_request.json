@@ -67,8 +67,9 @@
   {
    "fetch_from": "employee_number.company",
    "fieldname": "sponsor_company",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Sponsor Company",
+   "options": "Sponsor Company",
    "read_only": 1
   },
   {
@@ -153,7 +154,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 10:23:33.181584",
+ "modified": "2023-04-17 13:39:27.948350",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Leave Salary Request",

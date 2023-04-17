@@ -161,6 +161,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "plate.make",
    "fieldname": "make",
    "fieldtype": "Data",
    "label": "Make"
@@ -204,6 +205,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "plate.make",
    "fieldname": "make2",
    "fieldtype": "Data",
    "label": "Make"
@@ -281,7 +283,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-17 11:35:13.701277",
+ "modified": "2023-04-17 12:01:12.166743",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Vehicle Possession and Surrender Form",

@@ -1,0 +1,264 @@
+{
+ "actions": [],
+ "autoname": "field:employee_name",
+ "creation": "2023-04-17 16:36:21.865034",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "workflow",
+  "column_break_3",
+  "status",
+  "employee_details_section",
+  "emp_id",
+  "employee_name",
+  "job_title",
+  "dept",
+  "column_break_6",
+  "resident_id_number",
+  "doj",
+  "letter_head",
+  "company",
+  "assessment_period_section",
+  "from_date",
+  "column_break_16",
+  "to_date",
+  "section_break_18",
+  "evaluator",
+  "section_break_10",
+  "child",
+  "total_score",
+  "section_break_14",
+  "line_manager",
+  "section_break_15",
+  "dept__div_head",
+  "final_recommendation_and_approvals",
+  "section_break_19",
+  "hr_manager",
+  "column_break_21",
+  "managing_director",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "workflow",
+   "fieldtype": "Link",
+   "label": "Workflow",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Requested",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nRequested\nInitiated\nCompleted\nHold"
+  },
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "emp_id",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "emp_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "label": "Employee Name",
+   "options": "Name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "emp_id.designation",
+   "fieldname": "job_title",
+   "fieldtype": "Read Only",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "emp_id.department",
+   "fieldname": "dept",
+   "fieldtype": "Read Only",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "emp_id.resident_id_number",
+   "fieldname": "resident_id_number",
+   "fieldtype": "Read Only",
+   "label": "Resident ID Number(QID)"
+  },
+  {
+   "fetch_from": "emp_id.date_of_joining",
+   "fieldname": "doj",
+   "fieldtype": "Read Only",
+   "label": "Date of Joining"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "fetch_from": "emp_id.company",
+   "fieldname": "company",
+   "fieldtype": "Read Only",
+   "label": "Company"
+  },
+  {
+   "fieldname": "assessment_period_section",
+   "fieldtype": "Section Break",
+   "label": "Assessment Period"
+  },
+  {
+   "fetch_from": "emp_id.date_of_joining",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "emp_id.probation_end_date",
+   "fetch_if_empty": 1,
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "evaluator",
+   "fieldtype": "Link",
+   "label": "Evaluator",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Skill Sets"
+  },
+  {
+   "fieldname": "child",
+   "fieldtype": "Table",
+   "options": "Skill Sets"
+  },
+  {
+   "fieldname": "total_score",
+   "fieldtype": "Read Only",
+   "label": "Total Score"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "For Office Use"
+  },
+  {
+   "fieldname": "line_manager",
+   "fieldtype": "Small Text",
+   "label": "Line Manager\u2019s (Comments)"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "dept__div_head",
+   "fieldtype": "Small Text",
+   "label": "Dept. / Div. Head(Comments)"
+  },
+  {
+   "fieldname": "final_recommendation_and_approvals",
+   "fieldtype": "Select",
+   "label": "Final Recommendation and Approvals",
+   "options": "\nConfirm Employment\nExtend Probation\nTerminate"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "hr_manager",
+   "fieldtype": "Small Text",
+   "label": "HR & Admin manager(Comments)"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "managing_director",
+   "fieldtype": "Small Text",
+   "label": "Managing Director(Comments)"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Staff Probation Evaluation Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Staff Probation Evaluation Form",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-04-17 16:36:48.982327",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Staff Probation Evaluation Form",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

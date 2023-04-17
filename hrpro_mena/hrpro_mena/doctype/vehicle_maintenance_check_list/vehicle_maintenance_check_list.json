@@ -189,7 +189,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "employee_id.resident_id_no",
+   "fetch_from": "employee_id.resident_id_number",
    "fieldname": "resident_id_number",
    "fieldtype": "Read Only",
    "label": "Resident ID Number(QID)"
@@ -303,7 +303,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 08:17:58.166782",
+ "modified": "2023-04-17 13:04:50.192048",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Vehicle Maintenance Check List",

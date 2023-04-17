@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "field:request_type",
  "creation": "2023-04-17 07:54:52.256912",
  "default_view": "List",
@@ -19,7 +20,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 07:54:52.256912",
+ "modified": "2023-04-17 14:44:48.297841",
  "modified_by": "Administrator",
  "module": "HRPRO MENA",
  "name": "Request Type",
