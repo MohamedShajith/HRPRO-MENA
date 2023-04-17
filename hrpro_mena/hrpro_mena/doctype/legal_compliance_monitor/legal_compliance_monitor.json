@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "LCM.####",
+ "creation": "2023-04-17 08:00:23.713665",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "group",
+  "name_of_licence",
+  "category",
+  "contact_number",
+  "reference_number",
+  "issuing_authority",
+  "sponsor_company",
+  "company",
+  "column_break_10",
+  "issue_date",
+  "possibility_status",
+  "frequency_of_renewal_days",
+  "last_renewal_date",
+  "next_due",
+  "days_left",
+  "status",
+  "current_status",
+  "attach_file",
+  "custodian_information_section",
+  "custodian",
+  "custodian_name",
+  "column_break_21",
+  "custodian_resident_qid_number",
+  "email",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "group",
+   "fieldtype": "Select",
+   "label": "Group",
+   "options": "\nSponsor Company\nVehicle\nOthers"
+  },
+  {
+   "fieldname": "name_of_licence",
+   "fieldtype": "Data",
+   "label": "Name of the License"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Category",
+   "options": "Category"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "length": 10,
+   "options": "Phone"
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference Number"
+  },
+  {
+   "fieldname": "issuing_authority",
+   "fieldtype": "Data",
+   "label": "Issuing Authority"
+  },
+  {
+   "fieldname": "sponsor_company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Sponsor Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "possibility_status",
+   "fieldtype": "Select",
+   "label": "Renewability Status",
+   "options": "\nRenewable\nNon-Renewable\nUnlimited Validity"
+  },
+  {
+   "depends_on": "eval:doc.possibility_status == 'Renewable'",
+   "fieldname": "frequency_of_renewal_days",
+   "fieldtype": "Int",
+   "label": "Renewal Frequency(Days)"
+  },
+  {
+   "depends_on": "eval:doc.possibility_status == 'Renewable'",
+   "fieldname": "last_renewal_date",
+   "fieldtype": "Date",
+   "label": "Last Renewal Date"
+  },
+  {
+   "depends_on": "eval:doc.possibility_status == 'Renewable'",
+   "fieldname": "next_due",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Next Due Date"
+  },
+  {
+   "fieldname": "days_left",
+   "fieldtype": "Int",
+   "label": "Days Left",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Renewal Status",
+   "options": "\nValid\nDue for Renewal\nNot Renewable\nUnlimited\nVacated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_status",
+   "fieldtype": "Select",
+   "label": "Current Status",
+   "options": "\nLive\nInactive\nActive"
+  },
+  {
+   "fieldname": "attach_file",
+   "fieldtype": "Attach",
+   "label": "Attach File"
+  },
+  {
+   "fieldname": "custodian_information_section",
+   "fieldtype": "Section Break",
+   "label": "Custodian Information"
+  },
+  {
+   "fieldname": "custodian",
+   "fieldtype": "Link",
+   "label": "Custodian ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "custodian.employee_name",
+   "fieldname": "custodian_name",
+   "fieldtype": "Read Only",
+   "label": "Custodian Name"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "custodian.resident_id_number",
+   "fieldname": "custodian_resident_qid_number",
+   "fieldtype": "Data",
+   "label": "Custodian Resident QID Number"
+  },
+  {
+   "fetch_from": "custodian.company_email",
+   "fieldname": "email",
+   "fieldtype": "Read Only",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-17 08:01:11.103914",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Legal Compliance Monitor",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "sponsor_company",
+ "track_changes": 1
+}

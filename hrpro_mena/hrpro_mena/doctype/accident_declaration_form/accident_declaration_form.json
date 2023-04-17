@@ -1,0 +1,286 @@
+{
+ "actions": [],
+ "autoname": "field:employee_name",
+ "creation": "2023-04-15 14:20:47.078687",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_details_section",
+  "employee_id",
+  "employee_name",
+  "designation",
+  "department",
+  "nationality",
+  "marital_status",
+  "column_break_6",
+  "resident_id_number",
+  "date_of_joining",
+  "company",
+  "ag",
+  "gender",
+  "letter_head",
+  "details_of_injured_person_section",
+  "details_of_injured_person",
+  "head",
+  "location",
+  "date",
+  "column_break_20",
+  "day",
+  "time",
+  "break_3",
+  "description",
+  "column_break_16",
+  "person_involved",
+  "witness",
+  "column_break_19",
+  "sickness",
+  "probable_duration_of_disablement",
+  "medical_treatment",
+  "doctor_address",
+  "held_date",
+  "breal_4",
+  "address_of_the_doctor_by_whom_treatment_was_given",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fetch_from": "employee_number.employee_id",
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee_id.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.nationality",
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.marital_status",
+   "fieldname": "marital_status",
+   "fieldtype": "Data",
+   "label": "Marital Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_id.resident_id_number",
+   "fieldname": "resident_id_number",
+   "fieldtype": "Read Only",
+   "label": "Resident ID Number(QID)"
+  },
+  {
+   "fetch_from": "employee_id.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Data",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.company",
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.age",
+   "fieldname": "ag",
+   "fieldtype": "Data",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender",
+   "read_only": 1
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "details_of_injured_person_section",
+   "fieldtype": "Section Break",
+   "label": "Details of Injured Persons"
+  },
+  {
+   "fieldname": "details_of_injured_person",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Accident Declaration Child"
+  },
+  {
+   "fieldname": "head",
+   "fieldtype": "Section Break",
+   "label": "DETAILS OF THE ACCIDENT"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Place",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Select",
+   "label": "Day",
+   "options": "\nSunday\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday",
+   "read_only": 1
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Circumstance and Description of the accident"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "person_involved",
+   "fieldtype": "Small Text",
+   "label": "Name and Address of the persons involved in the accident"
+  },
+  {
+   "fieldname": "witness",
+   "fieldtype": "Small Text",
+   "label": "Name and Address of the witnesses"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sickness",
+   "fieldtype": "Small Text",
+   "label": "Nature & Extent of Injury(Or sickness)"
+  },
+  {
+   "fieldname": "probable_duration_of_disablement",
+   "fieldtype": "Time",
+   "label": "Probable duration of disablement"
+  },
+  {
+   "fieldname": "medical_treatment",
+   "fieldtype": "Section Break",
+   "label": "MEDICAL TREATMENT"
+  },
+  {
+   "fieldname": "doctor_address",
+   "fieldtype": "Data",
+   "label": "Name of Doctor",
+   "options": "Name"
+  },
+  {
+   "fieldname": "held_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "breal_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_of_the_doctor_by_whom_treatment_was_given",
+   "fieldtype": "Small Text",
+   "label": "Address of the Doctor By whom Treatment was given"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Accident Declaration Form",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-15 14:24:05.553220",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Accident Declaration Form",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

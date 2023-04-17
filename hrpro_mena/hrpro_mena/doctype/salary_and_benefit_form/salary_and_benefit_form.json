@@ -1,0 +1,430 @@
+{
+ "actions": [],
+ "autoname": "field:employee_name",
+ "creation": "2023-04-15 17:16:20.383771",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "workflow",
+  "column_break_3",
+  "status",
+  "section_break_3",
+  "emp_id",
+  "employee_name",
+  "job_title",
+  "dept",
+  "column_break_7",
+  "resident_id_numberqid",
+  "doj",
+  "company",
+  "request_date",
+  "s_section",
+  "column_break_15",
+  "basic",
+  "accomodation_allowance",
+  "transport_allowance",
+  "other_allowance",
+  "total",
+  "column_break_20",
+  "basic_salary",
+  "accomodation_allow",
+  "transport_allow",
+  "other_allow",
+  "total_new",
+  "section_break_26",
+  "name_of_appraiser",
+  "column_break1",
+  "job_title_1",
+  "section_break_15",
+  "appraisal_rating",
+  "total_score",
+  "salary_increment_section",
+  "select_23",
+  "section_break_9",
+  "data_10",
+  "section_break_23",
+  "data_12",
+  "current_salary",
+  "new_job_title",
+  "revised_salary",
+  "total_salary_increment",
+  "effective_from",
+  "additional_benefits_and_perks_section",
+  "additional",
+  "small_text_25",
+  "letter_head",
+  "for_office_use_section",
+  "hod",
+  "column_break_37",
+  "hr",
+  "column_break_39",
+  "managing_director",
+  "for_office_use1_section",
+  "department_manager",
+  "column_break_43",
+  "hr_manager",
+  "column_break_45",
+  "managing_director_1"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "workflow",
+   "fieldtype": "Read Only",
+   "label": "Workflow"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Requested",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nRequested\nInitiated\nCompleted\nHold"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "emp_id",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "emp_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "label": "Employee Name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "emp_id.designation",
+   "fieldname": "job_title",
+   "fieldtype": "Read Only",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "emp_id.department",
+   "fieldname": "dept",
+   "fieldtype": "Read Only",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "emp_id.resident_id_number",
+   "fieldname": "resident_id_numberqid",
+   "fieldtype": "Read Only",
+   "label": "Resident ID Number(QID)"
+  },
+  {
+   "fetch_from": "emp_id.date_of_joining",
+   "fieldname": "doj",
+   "fieldtype": "Read Only",
+   "label": "Date of Joining"
+  },
+  {
+   "fetch_from": "emp_id.company",
+   "fieldname": "company",
+   "fieldtype": "Read Only",
+   "label": "Company"
+  },
+  {
+   "default": "Today",
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "s_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break",
+   "label": "OLD"
+  },
+  {
+   "default": "0",
+   "fetch_from": "emp_id.basic",
+   "fieldname": "basic",
+   "fieldtype": "Currency",
+   "label": "Basic"
+  },
+  {
+   "default": "0",
+   "fetch_from": "emp_id.accommodation",
+   "fieldname": "accomodation_allowance",
+   "fieldtype": "Currency",
+   "label": "Accomodation Allowance"
+  },
+  {
+   "default": "0",
+   "fetch_from": "emp_id.transportation",
+   "fieldname": "transport_allowance",
+   "fieldtype": "Currency",
+   "label": "Transport Allowance"
+  },
+  {
+   "default": "0",
+   "fetch_from": "emp_id._other_allowance",
+   "fieldname": "other_allowance",
+   "fieldtype": "Currency",
+   "label": "Other Allowance "
+  },
+  {
+   "fetch_from": "emp_id.gross_salary",
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total "
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break",
+   "label": "Revised"
+  },
+  {
+   "default": "0",
+   "fieldname": "basic_salary",
+   "fieldtype": "Currency",
+   "label": "Basic Salary"
+  },
+  {
+   "default": "0",
+   "fieldname": "accomodation_allow",
+   "fieldtype": "Currency",
+   "label": "Accomodation Allow"
+  },
+  {
+   "default": "0",
+   "fieldname": "transport_allow",
+   "fieldtype": "Currency",
+   "label": "Transport Allow"
+  },
+  {
+   "default": "0",
+   "fieldname": "other_allow",
+   "fieldtype": "Currency",
+   "label": "Other Allow"
+  },
+  {
+   "fieldname": "total_new",
+   "fieldtype": "Currency",
+   "label": "Total "
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "name_of_appraiser",
+   "fieldtype": "Link",
+   "label": "Name of Appraiser",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name_of_appraiser.designation",
+   "fieldname": "job_title_1",
+   "fieldtype": "Read Only",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "appraisal_rating",
+   "fieldtype": "Table",
+   "label": "Appraisal rating ",
+   "options": "Appraisal Rating Table"
+  },
+  {
+   "fieldname": "total_score",
+   "fieldtype": "Data",
+   "label": "Total Score"
+  },
+  {
+   "fieldname": "salary_increment_section",
+   "fieldtype": "Section Break",
+   "label": "Salary Increment"
+  },
+  {
+   "fieldname": "select_23",
+   "fieldtype": "Select",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.select_23 == \"Yes\"",
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Justification for Salary Adjustment and Job Title Change"
+  },
+  {
+   "collapsible_depends_on": "eval:doc.yess == 1",
+   "fieldname": "data_10",
+   "fieldtype": "Small Text"
+  },
+  {
+   "depends_on": "eval:doc.select_23 == \"Yes\"",
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "data_12",
+   "fieldtype": "Data",
+   "label": "Current Designation"
+  },
+  {
+   "fieldname": "current_salary",
+   "fieldtype": "Table",
+   "label": "Current Salary(QR)",
+   "options": "Current Salary Table"
+  },
+  {
+   "fieldname": "new_job_title",
+   "fieldtype": "Data",
+   "label": "New Designation"
+  },
+  {
+   "fieldname": "revised_salary",
+   "fieldtype": "Table",
+   "label": "Revised Salary(QR)",
+   "options": "Revised Salary Table"
+  },
+  {
+   "fieldname": "total_salary_increment",
+   "fieldtype": "Int",
+   "label": "Total Salary Increment(QR)"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From"
+  },
+  {
+   "depends_on": "eval:doc.select_23 == \"Yes\"",
+   "fieldname": "additional_benefits_and_perks_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Benefits and Perks "
+  },
+  {
+   "fieldname": "additional",
+   "fieldtype": "Select",
+   "label": "Additional ",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.additional == 'Yes'",
+   "fieldname": "small_text_25",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "depends_on": "eval:doc.select_23 == \"No\"",
+   "fieldname": "for_office_use_section",
+   "fieldtype": "Section Break",
+   "label": "For office Use"
+  },
+  {
+   "fieldname": "hod",
+   "fieldtype": "Small Text",
+   "label": "HOD (Comments)"
+  },
+  {
+   "fieldname": "column_break_37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hr",
+   "fieldtype": "Small Text",
+   "label": "HR (Comments)"
+  },
+  {
+   "fieldname": "column_break_39",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "managing_director",
+   "fieldtype": "Small Text",
+   "label": "Managing Director (Comments)"
+  },
+  {
+   "depends_on": "eval:doc.select_23 == \"Yes\"",
+   "fieldname": "for_office_use1_section",
+   "fieldtype": "Section Break",
+   "label": "For office Use"
+  },
+  {
+   "fieldname": "department_manager",
+   "fieldtype": "Small Text",
+   "label": "Department Manager (Comments)"
+  },
+  {
+   "fieldname": "column_break_43",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hr_manager",
+   "fieldtype": "Small Text",
+   "label": "HR Manager (Comments)"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "managing_director_1",
+   "fieldtype": "Small Text",
+   "label": "Managing Director  (Comments)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-15 17:28:02.043198",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Salary and Benefit Form",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,393 @@
+{
+ "actions": [],
+ "autoname": "field:employee_name",
+ "creation": "2023-04-17 08:24:13.666931",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_details",
+  "requested_date",
+  "employee_no",
+  "employee_name",
+  "designation",
+  "department",
+  "column_break_4",
+  "resident_id_no",
+  "date_of_joining",
+  "company",
+  "type",
+  "site_store_clearance",
+  "equipments",
+  "tools",
+  "materials",
+  "gatesecurity_pass",
+  "documents_drawings",
+  "other_items",
+  "remarks_column",
+  "data_15",
+  "admin_hr_clearance",
+  "vehical_no",
+  "mobile",
+  "sim_card",
+  "immigration_fines",
+  "vehicletraffic_fines",
+  "fla_room_accommodation_",
+  "personal_loans_with_bank",
+  "bank",
+  "duty_handover_letter",
+  "remarks_2",
+  "remarks_admin",
+  "it_clearance",
+  "laptop",
+  "hardisk",
+  "computer_accessories",
+  "column_break_45",
+  "remarks_it",
+  "finance_clearance",
+  "personal_loan__with_company",
+  "cash_advances",
+  "other_financial_liabilities",
+  "column_break_38",
+  "remarks",
+  "clearance_approval",
+  "accounts_dept",
+  "column_break_40",
+  "admin_dept",
+  "letter_head",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_details",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "default": "Today",
+   "fieldname": "requested_date",
+   "fieldtype": "Date",
+   "label": "Requested Date"
+  },
+  {
+   "fetch_from": "employee_number.employee_no",
+   "fieldname": "employee_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": " Employee No",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_no.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": " Employee Name",
+   "options": "Name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee_no.designation",
+   "fieldname": "designation",
+   "fieldtype": "Read Only",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "employee_no.department",
+   "fieldname": "department",
+   "fieldtype": "Read Only",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_no.resident_id_number",
+   "fieldname": "resident_id_no",
+   "fieldtype": "Read Only",
+   "label": "Resident ID No(QID)"
+  },
+  {
+   "fetch_from": "employee_no.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Read Only",
+   "label": "Date of Joining"
+  },
+  {
+   "fetch_from": "employee_no.company",
+   "fieldname": "company",
+   "fieldtype": "Read Only",
+   "label": "Company"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Exit Type",
+   "options": "Vacation\nFinal Exit"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.workflow_state == \"Pending for Store Clearance\"",
+   "fieldname": "site_store_clearance",
+   "fieldtype": "Section Break",
+   "label": "SITE/STORE CLEARANCE"
+  },
+  {
+   "fieldname": "equipments",
+   "fieldtype": "Select",
+   "label": " Equipments",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "tools",
+   "fieldtype": "Select",
+   "label": " Tools",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "materials",
+   "fieldtype": "Select",
+   "label": " Materials",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "gatesecurity_pass",
+   "fieldtype": "Select",
+   "label": " Gate/Security pass",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "documents_drawings",
+   "fieldtype": "Select",
+   "label": " Documents/Drawings etc...",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "other_items",
+   "fieldtype": "Select",
+   "label": " Other Items",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "remarks_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "data_15",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.workflow_state == \"Pending for HR Clearance\"",
+   "fieldname": "admin_hr_clearance",
+   "fieldtype": "Section Break",
+   "label": "ADMIN/HR CLEARANCE"
+  },
+  {
+   "fieldname": "vehical_no",
+   "fieldtype": "Select",
+   "label": "Vehicle No",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Select",
+   "label": "Mobile",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "sim_card",
+   "fieldtype": "Select",
+   "label": "Sim Card",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "immigration_fines",
+   "fieldtype": "Select",
+   "label": "Immigration Fines",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "vehicletraffic_fines",
+   "fieldtype": "Select",
+   "label": "Vehicle/Traffic Fines",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "fla_room_accommodation_",
+   "fieldtype": "Select",
+   "label": "Flat/Room/Accommodation",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "personal_loans_with_bank",
+   "fieldtype": "Select",
+   "label": "Personal Loans with Bank",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Select",
+   "label": "Credit Cards with Bank",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "duty_handover_letter",
+   "fieldtype": "Select",
+   "label": "Duty Handover Letter",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "remarks_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_admin",
+   "fieldtype": "Small Text",
+   "label": "REMARKS"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.workflow_state == \"Pending for IT Clearance\"",
+   "fieldname": "it_clearance",
+   "fieldtype": "Section Break",
+   "label": "IT CLEARANCE"
+  },
+  {
+   "fieldname": "laptop",
+   "fieldtype": "Select",
+   "label": " Laptop",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "hardisk",
+   "fieldtype": "Select",
+   "label": " Hardisk",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "computer_accessories",
+   "fieldtype": "Select",
+   "label": " Computer Accessories",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_it",
+   "fieldtype": "Small Text",
+   "label": "REMARKS"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.workflow_state == \"Pending for Finance Clearance\"",
+   "fieldname": "finance_clearance",
+   "fieldtype": "Section Break",
+   "label": "FINANCE CLEARANCE"
+  },
+  {
+   "fieldname": "personal_loan__with_company",
+   "fieldtype": "Select",
+   "label": " Personal Loan with Company",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "cash_advances",
+   "fieldtype": "Select",
+   "label": " Cash Advances",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "other_financial_liabilities",
+   "fieldtype": "Select",
+   "label": " Other Financial liabilities",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "REMARKS"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.workflow_state == \"Pending for Clearance Approval\"",
+   "fieldname": "clearance_approval",
+   "fieldtype": "Section Break",
+   "label": "CLEARANCE APPROVAL"
+  },
+  {
+   "fieldname": "accounts_dept",
+   "fieldtype": "Data",
+   "label": "Accounts Dept"
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "admin_dept",
+   "fieldtype": "Data",
+   "label": "Admin Dept"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vacation Final Exit Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vacation Final Exit Form",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-04-17 08:24:57.341087",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Vacation Final Exit Form",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

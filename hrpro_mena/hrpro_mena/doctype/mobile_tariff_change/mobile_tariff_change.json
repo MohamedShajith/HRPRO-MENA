@@ -1,0 +1,317 @@
+{
+ "actions": [],
+ "autoname": "field:employee_name",
+ "creation": "2023-04-17 07:43:38.022957",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_2",
+  "status",
+  "employee_details",
+  "emp_id",
+  "employee_name",
+  "job_title",
+  "dept",
+  "column_break_5",
+  "resident_id_number",
+  "date_of_join",
+  "company",
+  "letter_head",
+  "request_section",
+  "date",
+  "service_provider",
+  "service_no",
+  "current_plan",
+  "amount_2",
+  "column_break_15",
+  "benefits",
+  "proposed_plan",
+  "amount_3",
+  "proposed_benefits",
+  "section_break_19",
+  "section_break_25",
+  "plan_name",
+  "column_break_27",
+  "plan_amount",
+  "column_break_29",
+  "plan_benefits",
+  "column_break_31",
+  "plan_activation_date",
+  "section_break_33",
+  "comments",
+  "for_office_use_section",
+  "authorisation_of_dept_div_head",
+  "section_break_34",
+  "admin_manager",
+  "column_break_26",
+  "it_administrator",
+  "column_break_38",
+  "managing_director",
+  "section"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Requested",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nRequested\nInitiated\nCompleted\nHold"
+  },
+  {
+   "fieldname": "employee_details",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fetch_from": "emp_id.employee_number",
+   "fieldname": "emp_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "emp_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "options": "Name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "emp_id.designation",
+   "fieldname": "job_title",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "emp_id.department",
+   "fieldname": "dept",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "emp_id.resident_id_number",
+   "fieldname": "resident_id_number",
+   "fieldtype": "Read Only",
+   "label": "Resident ID Number(QID)"
+  },
+  {
+   "fetch_from": "emp_id.scheduled_confirmation_date",
+   "fieldname": "date_of_join",
+   "fieldtype": "Read Only",
+   "label": "Date of Joining"
+  },
+  {
+   "fetch_from": "emp_id.company",
+   "fieldname": "company",
+   "fieldtype": "Read Only",
+   "label": "Company / Division"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "request_section",
+   "fieldtype": "Section Break",
+   "label": "Request Details"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fetch_from": "emp_id.service_provider",
+   "fetch_if_empty": 1,
+   "fieldname": "service_provider",
+   "fieldtype": "Data",
+   "label": "Service provider"
+  },
+  {
+   "fetch_from": "emp_id.mobile_number",
+   "fetch_if_empty": 1,
+   "fieldname": "service_no",
+   "fieldtype": "Int",
+   "label": "Service Number",
+   "options": "Phone"
+  },
+  {
+   "fetch_from": "emp_id.current_plan",
+   "fetch_if_empty": 1,
+   "fieldname": "current_plan",
+   "fieldtype": "Data",
+   "label": "Current Plan"
+  },
+  {
+   "fieldname": "amount_2",
+   "fieldtype": "Data",
+   "label": "Current Amount"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "emp_id.current_benefits",
+   "fetch_if_empty": 1,
+   "fieldname": "benefits",
+   "fieldtype": "Data",
+   "label": "Current Benefits"
+  },
+  {
+   "fieldname": "proposed_plan",
+   "fieldtype": "Data",
+   "label": "Proposed Plan"
+  },
+  {
+   "fieldname": "amount_3",
+   "fieldtype": "Int",
+   "label": "Proposed Amount"
+  },
+  {
+   "fieldname": "proposed_benefits",
+   "fieldtype": "Data",
+   "label": "Proposed Benefits"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "For Office Use"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_amount",
+   "fieldtype": "Data",
+   "label": "Plan Amount"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_benefits",
+   "fieldtype": "Data",
+   "label": "Plan Benefits"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_activation_date",
+   "fieldtype": "Date",
+   "label": "Plan Activation Date"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "for_office_use_section",
+   "fieldtype": "Section Break",
+   "label": "For Office Use"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "authorisation_of_dept_div_head",
+   "fieldtype": "Small Text",
+   "label": "Authorisation of Dept./ Div. Head"
+  },
+  {
+   "fieldname": "section_break_34",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "admin_manager",
+   "fieldtype": "Small Text",
+   "label": "Admin Manager"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "it_administrator",
+   "fieldtype": "Small Text",
+   "label": "IT Administrator"
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comments",
+   "fieldname": "managing_director",
+   "fieldtype": "Small Text",
+   "label": "Managing Director"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-17 07:43:48.858895",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Mobile Tariff Change",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

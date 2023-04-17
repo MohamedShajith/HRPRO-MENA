@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "creation": "2023-04-17 08:16:01.646657",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_info",
+  "category",
+  "plate_no",
+  "weekly_utilization",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_info",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle Info",
+   "options": "Vehicle"
+  },
+  {
+   "fetch_from": "vehicle_info.vehicle_category",
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Category"
+  },
+  {
+   "fetch_from": "vehicle_info.name",
+   "fieldname": "plate_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plate No"
+  },
+  {
+   "fieldname": "weekly_utilization",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Utilization (Km)"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-17 08:16:01.646657",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Vehicle Information",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

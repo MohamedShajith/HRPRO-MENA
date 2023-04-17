@@ -1,0 +1,39 @@
+{
+ "actions": [],
+ "creation": "2023-04-15 17:14:45.204496",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "work_assigned",
+  "rating"
+ ],
+ "fields": [
+  {
+   "fieldname": "work_assigned",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Work Assigned"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating "
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-15 17:14:45.204496",
+ "modified_by": "Administrator",
+ "module": "HRPRO MENA",
+ "name": "Appraisal Rating Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
